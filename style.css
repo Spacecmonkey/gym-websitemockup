@@ -1,0 +1,321 @@
+* {
+    /* border: 1px solid red; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 50vh; 
+    overflow-x: hidden;
+}  
+/* Googed this */
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    top: 0px;
+    height: 60px;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5%;
+    font-size: x-large;
+}
+
+.navbar-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.nav-item {
+    margin: 10px;
+    width: 100%;
+    font-size: large;
+}
+
+a {
+    text-decoration: none;
+    color: #bbb7b7; 
+    position: relative; /* Create a positioning context for pseudo-elements */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Add transitions for color, transform, and background-color */
+}
+
+a::before {
+    content: ''; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px; 
+    background-color: whitesmoke; 
+    transform: scaleX(0); 
+    transform-origin: right; 
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; 
+}
+
+a:hover {
+    color: 	rgb(255,215,0); 
+    transform: translateY(-3px); 
+}
+
+a:hover::before {
+    transform: scaleX(1); 
+    background-color: 	rgb(255,215,0); 
+}
+
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 4em;
+    color: gold;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    z-index: 1; /* Ensure the caption is above the background */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.background {
+    width: 100%;
+    max-height: 100%;
+    z-index: 0; 
+}
+
+.container {
+    display: block;
+}
+/* Amenities panel styling starts here*/
+.amenities-header {
+    color: gold;
+    font-size: x-large;
+}
+
+.amenities {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+    text-align: center;
+    background-color: black; 
+    margin-top: -10px;
+    color: white;
+}
+
+.main-tile-dimension {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    max-width: 1200px; 
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px; 
+    background-color: rgba(128, 128, 128, 0.644);
+    padding: 10px;
+}
+
+.image-container-service {
+    height: 300px; 
+    width: 100%;
+    overflow: hidden; 
+}
+
+img {
+    max-width: 100%; 
+}
+
+.service-details {
+    margin-top: 10px; 
+    text-align: center;
+}
+/* styling for the about page starts here */
+.about {
+    text-align: center;
+    padding-top: 5%;
+    background-color: black;
+}
+
+.about-heading {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.about-heading h2 {
+    font-size: 4em;
+    color: gold;
+}
+
+.about-image-container {
+    text-align: center;
+}
+
+.about-image-container img {
+    max-width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 450px gold; /* Add a gold shadow */
+}
+
+
+.owner-description {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+}
+
+.owner-description h3 {
+    font-size: 1.5em;
+    color: gold;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.tiny {
+    color: black;
+}
+
+.socials-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: rgba(245, 245, 245, 0.116);
+    border-radius: 10px;
+    margin-bottom: 10%;
+}
+
+
+.trainer-description {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+}
+
+.trainer-description h3 {
+    font-size: 1.5em;
+    color: gold;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+
+.trainer-image-container {
+    text-align: center;
+    border-top: solid 1px gray;
+    margin: 5%;
+}
+
+.trainer-image-container img {
+    max-width: fit-content;
+    height: fit-content;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 100px grey; 
+    margin-top: 10%;
+}
+
+
+/* sign-in page styling starts */
+.body-sign-in {
+    background-color: black;
+}
+
+.form-container {
+    background-color: black;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0 100px gold;
+    margin-top: 10%;
+}
+
+h2 {
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    color: white;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 350px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* sign-out page styling starts */
+
+.feedback {
+
+}
+
+
+
+
+
